@@ -1,0 +1,13 @@
+.welcome-msg {
+  padding: 30px;
+  text-align: center;
+}
+
+.homepage-weather {
+  padding: 10px;
+  text-align: center;
+}
+
+.render-weather {
+  margin: 15px;
+}
