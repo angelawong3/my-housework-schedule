@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
+a,
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .top-nav {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
@@ -77,6 +87,12 @@
 }
 
 @media (max-width: 700px) {
+  a,
+  a:visited {
+    text-decoration: none;
+    color: #fff;
+  }
+
   .menu-button-container {
     display: flex;
   }
@@ -114,10 +130,5 @@
   }
   .menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
-  }
-
-  .menu > li:hover {
-    text-decoration: underline;
-    cursor: pointer;
   }
 }
