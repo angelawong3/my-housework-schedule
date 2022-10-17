@@ -4,10 +4,10 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <section class="top-nav">
+    <section className="top-nav">
       <div>My Housework APP</div>
       <input id="menu-toggle" type="checkbox" />
-      <label className="menu-button-container" for="menu-toggle">
+      <label className="menu-button-container" htmlFor="menu-toggle">
         <div className="menu-button"></div>
       </label>
       <ul className="menu">
