@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import YouTubeSearch from "youtube-api-search";
 
-let API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
+const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 function MyTools() {
   const [searchTerm, setSearchTerm] = useState("");
   const [videos, setVideos] = useState([]);
+
+  // display housework tips video before users' search
+  useEffect(() => {
+    YouTubeSearch({ key: API_KEY, term: "housework tips" }, (videos) => {
+      setVideos(videos);
+    });
+  }, []);
 
   const search = (term) => {
     YouTubeSearch({ key: API_KEY, term: term }, (videos) => {
@@ -41,7 +48,7 @@ function MyTools() {
         <form onSubmit={videoSearch}>
           <input
             type="text"
-            placeholder="Search for videos to help"
+            placeholder="Search for videos to help you"
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
           />
