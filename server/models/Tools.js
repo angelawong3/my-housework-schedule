@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-const houseworkSchema = new Schema({
+const toolsSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -27,6 +27,6 @@ const houseworkSchema = new Schema({
   },
 });
 
-const Housework = mongoose.model("Housework", houseworkSchema);
+const Tools = mongoose.model("Tools", toolsSchema);
 
-module.exports = Housework;
+module.exports = Tools;

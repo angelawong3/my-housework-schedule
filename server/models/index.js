@@ -1,5 +1,5 @@
-const User = require("./user");
-const Housework = require("./housework");
-const Tools = require("./tools");
+const User = require("./User");
+const Housework = require("./Housework");
+const Tools = require("./Tools");
 
 module.exports = { User, Housework, Tools };
