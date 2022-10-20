@@ -33,27 +33,32 @@ db.once("open", async () => {
       name: "Vacuum",
       description: "Vacuum the floors",
       frequency: "daily",
+      user: "63501d4286cfb9532727df72",
     },
     {
       name: "Laundry",
       description: "Wash the clothes, change the sheets",
       frequency: "weekly",
+      user: "63501d4286cfb9532727df72",
     },
     {
       name: "Bathroom",
       description: "Clean the bath tub, toilet, sink",
       frequency: "weekly",
+      user: "63501d4286cfb9532727df72",
     },
     {
       name: "Bedroom",
       description: "Clean the bedroom",
       frequency: "weekly",
+      user: "63501d4286cfb9532727df72",
     },
     {
       name: "Check Smoke Alarms",
       description:
         "Dust down & change the batteries if they need to be replaced",
       frequency: "monthly",
+      user: "63501d4286cfb9532727df72",
     },
   ]);
 
@@ -70,6 +75,7 @@ db.once("open", async () => {
       picture:
         "https://digitalcontent.api.tesco.com/v2/media/ghs/c5b123b6-6ca4-4167-bf6b-d8e811c37eeb/72f9474e-45a9-4876-b9d9-9241723f7b9e_605775415.jpeg?h=540&w=540",
       price: 1.5,
+      user: "63501d4286cfb9532727df72",
     },
     {
       name: "Gloves",
@@ -77,6 +83,7 @@ db.once("open", async () => {
       picture:
         "https://www.ikea.com/gb/en/images/products/rinnig-cleaning-gloves-green__0930415_pe790757_s5.jpg",
       price: 1.0,
+      user: "63501d4286cfb9532727df72",
     },
     {
       name: "Vacuum Cleaner",
@@ -84,6 +91,7 @@ db.once("open", async () => {
       picture:
         "https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/images/products/primary/394483-01.png?$responsive$&cropPathE=desktop&fit=stretch,1&wid=960",
       price: 299.99,
+      user: "63501d4286cfb9532727df72",
     },
   ]);
 

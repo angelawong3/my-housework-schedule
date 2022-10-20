@@ -1,6 +1,7 @@
 const { User, Housework, Tools } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
+const { countDocuments } = require("../models/User");
 
 const resolvers = {
   Query: {
@@ -13,9 +14,11 @@ const resolvers = {
     },
 
     // get housework by user id
-    housework: async (parent, { _id }, context) => {
+    houseworkByUserID: async (parent, args, context) => {
       if (context.user) {
-        const houseworkData = await Housework.findById(_id);
+        const houseworkData = await Housework.findOne({
+          user: context.user._id,
+        });
         console.log(houseworkData);
         return houseworkData;
       }
@@ -23,9 +26,9 @@ const resolvers = {
     },
 
     // get tools by user id
-    tools: async (parent, { _id }, context) => {
+    toolsByUserId: async (parent, args, context) => {
       if (context.user) {
-        const toolsData = await Tools.findById(_id);
+        const toolsData = await Tools.findOne({ user: context.user._id });
         console.log(toolsData);
         return toolsData;
       }
