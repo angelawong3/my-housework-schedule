@@ -1,17 +1,49 @@
-const { User } = require("../models");
+const { User, Housework, Tools } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    // get one user
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id });
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    // get housework by user id
+    housework: async (parent, { _id }, context) => {
+      if (context.user) {
+        const houseworkData = await Housework.findById(_id);
+        console.log(houseworkData);
+        return houseworkData;
+      }
+      throw new AuthenticationError("Not logged in");
+    },
+
+    // get tools by user id
+    tools: async (parent, { _id }, context) => {
+      if (context.user) {
+        const toolsData = await Tools.findById(_id);
+        console.log(toolsData);
+        return toolsData;
+      }
+      throw new AuthenticationError("Not logged in");
+    },
   },
-  Mutation: {},
+  // Mutation: {
+  // login
+  // add user
+  // del user
+  // add housework
+  // update housework
+  // del housework
+  // add tools
+  // update tools
+  // del tools
+  // extra: add YouTube video to user dashboard
+  // extra: add tools to housework
+  // },
 };
 
 module.exports = resolvers;
