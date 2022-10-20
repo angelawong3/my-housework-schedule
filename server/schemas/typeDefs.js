@@ -26,10 +26,19 @@ const typeDefs = gql`
     user: String
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     me: User
     housework(_id: ID!): Housework
     tools(_id: ID!): Tools
+  }
+
+  type Mutation {
+    login(email: String!, password: String!): Auth
   }
 `;
 

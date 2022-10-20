@@ -11,6 +11,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
     // get housework by user id
     housework: async (parent, { _id }, context) => {
       if (context.user) {
@@ -31,19 +32,30 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
   },
-  // Mutation: {
-  // login
-  // add user
-  // del user
-  // add housework
-  // update housework
-  // del housework
-  // add tools
-  // update tools
-  // del tools
-  // extra: add YouTube video to user dashboard
-  // extra: add tools to housework
-  // },
+  Mutation: {
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+      if (!user) {
+        throw new AuthenticationError("Incorrect email or password");
+      }
+      const correctPw = await user.isCorrectPassword(password);
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect email or password");
+      }
+      const token = signToken(user);
+      return { token, user };
+    },
+    // add user
+    // del user
+    // add housework
+    // update housework
+    // del housework
+    // add tools
+    // update tools
+    // del tools
+    // extra: add YouTube video to user dashboard
+    // extra: add tools to housework
+  },
 };
 
 module.exports = resolvers;
