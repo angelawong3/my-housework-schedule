@@ -50,7 +50,29 @@ const resolvers = {
     },
     // add user
     // del user
+
     // add housework
+    addHousework: async (parent, { name, description, frequency }, context) => {
+      if (context.user) {
+        console.log(context.user);
+        console.log(name, description, frequency);
+        const userHousework = await Housework.create(
+          {
+            name,
+            description,
+            frequency,
+            user: context.user._id,
+          },
+          {
+            new: true,
+          }
+        );
+        console.log(userHousework);
+        return userHousework;
+      }
+      throw new AuthenticationError("Not logged in");
+    },
+
     // update housework
     // del housework
     // add tools
