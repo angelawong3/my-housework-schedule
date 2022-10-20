@@ -22,7 +22,7 @@ db.once("open", async () => {
     },
   ]);
 
-  console.log("users seeded");
+  console.log("Users seeded");
 
   // Housework seed data
 
