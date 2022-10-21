@@ -1,13 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap");
+
 .welcome-msg {
   padding: 30px;
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 .homepage-weather {
-  padding: 10px;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .render-weather {
   margin: 15px;
+  font-family: "Mukta", sans-serif;
+  letter-spacing: 3px;
 }
