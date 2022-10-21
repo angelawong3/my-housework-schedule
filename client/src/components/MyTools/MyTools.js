@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import YouTubeSearch from "youtube-api-search";
 
+import "./MyTools.css";
+
 const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 function MyTools() {
@@ -30,6 +32,7 @@ function MyTools() {
       <div className="video-item" key={video.etag}>
         <div className="video-title">{video.snippet.title}</div>
         <iframe
+          className="video-player"
           width="380"
           height="200"
           src={`https://www.youtube.com/embed/${video.id.videoId}`}
@@ -47,12 +50,15 @@ function MyTools() {
       <div className="youtube-search">
         <form onSubmit={videoSearch}>
           <input
+            className="youtube-search-input"
             type="text"
             placeholder="Search for videos to help you"
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
           />
-          <button type="submit">Search!</button>
+          <button className="submit-btn" type="submit">
+            Search!
+          </button>
         </form>
       </div>
       <div className="video-list">{videoList}</div>

@@ -1,0 +1,44 @@
+.youtube-search {
+  margin: 10px auto;
+  align-items: center;
+  justify-content: right;
+  width: 300px;
+}
+
+.youtube-search-input {
+  line-height: 1.5;
+  width: 300px;
+}
+
+.submit-btn {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.video-item,
+.video-player {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* justify-content: right; */
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.video-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 0 20px;
+  padding: 5px;
+}
