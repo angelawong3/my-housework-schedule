@@ -15,7 +15,9 @@ function Navbar() {
         <li>
           <NavLink to="/">Homepage</NavLink>
         </li>
-        <li>Login</li>
+        <li>
+          <NavLink to="/login">Login</NavLink>
+        </li>
         <li>Signup</li>
         {/* private */}
         <li>
