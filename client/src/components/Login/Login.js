@@ -26,6 +26,7 @@ function Login() {
       });
 
       Auth.login(data.login.token);
+      console.log("loginnnnnnn");
     } catch (err) {
       console.error(err);
     }
@@ -45,7 +46,7 @@ function Login() {
         />
       </div>
       <div className="login-form">
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="login-form-input">
             <input
               type="email"
@@ -75,9 +76,7 @@ function Login() {
               }}
             />
             <br />
-            <button type="submit" onSubmit={handleLogin}>
-              Login
-            </button>
+            <button type="submit">Login</button>
           </div>
         </form>
       </div>
