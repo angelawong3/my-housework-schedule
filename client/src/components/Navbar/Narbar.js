@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
+import Auth from "../../utils/auth";
+
 function Navbar() {
   return (
     <section className="top-nav">
@@ -11,22 +13,35 @@ function Navbar() {
         <div className="menu-button"></div>
       </label>
       <ul className="menu">
-        {/* public */}
+        {/* public navbar */}
         <li>
           <NavLink to="/">Homepage</NavLink>
         </li>
-        <li>
-          <NavLink to="/login">Login</NavLink>
-        </li>
-        <li>Signup</li>
-        {/* private */}
-        <li>
-          <NavLink to="/myhousework">My Houserwork</NavLink>
-        </li>
-        <li>
-          <NavLink to="/mytools">My Tools</NavLink>
-        </li>
-        <li>Logout</li>
+        {/* private navbar */}
+        {Auth.loggedIn() ? (
+          <>
+            <li>
+              <NavLink to="/myhousework">My Housework</NavLink>
+            </li>
+            <li>
+              <NavLink to="/mytools">My Tools</NavLink>
+            </li>
+            <li>
+              <NavLink to="/" onClick={() => Auth.logout()}>
+                Logout
+              </NavLink>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <NavLink to="/login">Login</NavLink>
+            </li>
+            <li>
+              <NavLink to="/signup">Signup</NavLink>
+            </li>
+          </>
+        )}
       </ul>
     </section>
   );
