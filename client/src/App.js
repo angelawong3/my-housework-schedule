@@ -4,6 +4,7 @@ import Wrapper from "./components/Wrapper/Wrapper";
 import MyHouseWork from "./components/MyHousework/MyHousework";
 import MyTools from "./components/MyTools/MyTools";
 import Login from "./components/Login/Login";
+import Signup from "./components/Signup/Signup";
 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -47,6 +48,7 @@ function App() {
             <Route path="/myhousework" element={<MyHouseWork />} />
             <Route path="/mytools" element={<MyTools />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="*" element={<h1>404: Not Found</h1>} />
           </Routes>
         </Wrapper>
