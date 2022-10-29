@@ -12,3 +12,28 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const SIGNUP = gql`
+  mutation signup(
+    $userName: String!
+    $email: String!
+    $password: String!
+    $profilePic: String!
+  ) {
+    signup(
+      userName: $userName
+      email: $email
+      password: $password
+      profilePic: $profilePic
+    ) {
+      token
+      user {
+        _id
+        userName
+        email
+        password
+        profilePic
+      }
+    }
+  }
+`;
