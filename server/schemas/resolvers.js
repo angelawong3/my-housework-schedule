@@ -48,7 +48,13 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    // add user
+    // signup
+    signup: async (parent, { userName, email, password, profilePic }) => {
+      const user = await User.create({ userName, email, password, profilePic });
+      const token = signToken(user);
+      return { token, user };
+    },
+
     // del user
 
     // add housework

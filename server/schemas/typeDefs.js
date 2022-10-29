@@ -39,6 +39,12 @@ const typeDefs = gql`
 
   type Mutation {
     login(email: String!, password: String!): Auth
+    signup(
+      userName: String!
+      email: String!
+      password: String!
+      profilePic: String!
+    ): Auth
     addHousework(
       name: String!
       description: String!
